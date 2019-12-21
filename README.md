@@ -84,4 +84,5 @@ Response:
 ```
 
 Note: translated texts will be store in DB and used next time for same translation text
+
 Note2: It only works for Google translate API atm.
