@@ -46,6 +46,7 @@ HEADER: `token:747123be-1102-4fd8-8aac-cae6404c48a3`
 POST `http://localhost:3000/setup/translators`  
 
 HEADER: `token:747123be-1102-4fd8-8aac-cae6404c48a3`
+
 Payload
 ```json
 {
@@ -62,6 +63,7 @@ Also you can use `PUT` for update and `DELETE` for removing config
 POST `http://localhost:3000/translate`
 
 HEADER: `token:747123be-1102-4fd8-8aac-cae6404c48a3`
+
 Payload:
 ```json
 {
@@ -82,3 +84,4 @@ Response:
 ```
 
 Note: translated texts will be store in DB and used next time for same translation text
+Note2: It only works for Google translate API atm.
