@@ -1,0 +1,29 @@
+version: "3"
+services:
+  nodejs:
+    build:
+      context: ./
+      dockerfile: dockers/nodejs/Dockerfile
+    user: "node"
+    working_dir: /app
+    environment:
+      - NODE_ENV=dev
+    volumes:
+      - ./:/app
+    ports:
+      - "3000:3000"
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+      - "27019:27019"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "root123"
+      APP_DB_NAME: "translation"
+      APP_DB_USER: "app"
+      APP_DB_PASS: "appdev"
+    volumes:
+      - ./.db:/data/db
+      - ./db-init.sh:/docker-entrypoint-initdb.d/init-mongo.sh
